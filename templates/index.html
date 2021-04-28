@@ -1,0 +1,36 @@
+{% extends 'base/master.html' %}
+{% load static %}
+{% block 'title' %} Home {% endblock %}
+
+ {% block 'sidebar' %}
+  {% include 'base/sidebar.html' %}
+ {% endblock %}
+
+ {% block 'navbar' %}
+  {% include 'base/nav.html' %}
+ {% endblock %}
+
+
+{% block 'body' %}
+ <div style="text-align:center;">
+        <h3 class="bg-white topbar mb-4 static-top "><b>Bike owner details extraction information system</b></h3><hr/>
+        {%if messages %}
+            <div class = "alert alert-warning">
+                    {% for message in messages %}
+                        {{ message }}
+                    {% endfor %}
+            </div>
+        {%endif%}
+
+        <form action="{% url 'dashboard' %}" method="GET">
+            {% csrf_token %}
+            <label>Bike number : </label>
+            <input type="text" name="BikeNumber" placeholder="ba.2.pa.2151"><br><br>
+            <button type="submit">submit</button>&nbsp; &nbsp; &nbsp;
+        </form>
+    </div>
+{% endblock %}
+
+
+
+

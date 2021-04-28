@@ -1,0 +1,44 @@
+{% extends 'base/master.html' %}
+{% load static %}
+{% block 'title' %} Home {% endblock %}
+
+ {% block 'sidebar' %}
+  {% include 'base/sidebar.html' %}
+ {% endblock %}
+
+ {% block 'navbar' %}
+  {% include 'base/nav.html' %}
+ {% endblock %}
+
+
+{% block 'body' %}
+
+
+
+<div style="text-align:center;">
+        <h3><b>Bike owner details extraction information system</b></h3><hr>
+            <h4>तपाई को बाइक नम्बर बाट निकालिए को डाटा !!</h4><br>
+        <div class="box">
+        <table align="center" border="1px;">
+            <tr>
+                <th>Name</th>
+                <th>BikeNo</th>
+                <th>CitizenNo</th>
+                <th>BloodGroup</th>
+                <th>LiscenseNo</th>
+            </tr>
+            <tr>
+                <td>{{data.name}}</td>
+                <td>{{data.BikeNo}}</td>
+                <td>{{data.CitizenNo}}</td>
+                <td>{{data.BloodGroup}}</td>
+                <td>{{data.LiscenseNo}}</td>
+            </tr>
+        </table>
+        </div>
+    </div>
+
+
+
+{% endblock %}
+
